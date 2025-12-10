@@ -163,7 +163,21 @@ class ApiClient {
     * Get recent comments (cached)
     */
    async getRecentComments(limit: number = 10): Promise<Comment[]> {
-      return this.request<Comment[]>(`/api/comments/recent?limit=${limit}`);
+      // The backend exposes `/api/comments` which returns comments ordered
+      // by `created_at` desc. Use `per_page` to limit the number returned.
+      const resp = await this.request<{
+         success: boolean;
+         data: Comment[];
+         pagination: {
+            page: number;
+            per_page: number;
+            total: number;
+            pages: number;
+            has_next: boolean;
+            has_prev: boolean;
+         };
+      }>(`/api/comments?per_page=${limit}`);
+      return resp.data;
    }
 
    /**
