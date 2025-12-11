@@ -74,7 +74,6 @@ export default function Home() {
                <p className="text-muted-foreground">
                   Discover amazing blog posts from our community
                </p>
-               {/* Search bar placed inside hero, just below description */}
                <motion.div
                   initial={{ opacity: 0, y: 8 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -85,8 +84,6 @@ export default function Home() {
                </motion.div>
             </header>
          </motion.div>
-
-         {/* Search Bar moved into hero */}
 
          {/* Posts Grid */}
          <PostGrid posts={posts} isLoading={isLoading} />
