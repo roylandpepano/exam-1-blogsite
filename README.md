@@ -1,4 +1,4 @@
-# Blogsite (Exam 1)
+# HorizonLog - Blogsite (Exam 1)
 
 A simple blog application with a Next.js frontend and a Flask REST API backend. The project demonstrates CRUD operations for posts and comments, pagination, search, caching, database migrations, and seeding for development.
 
@@ -258,4 +258,4 @@ curl -X POST http://localhost:5000/api/comments \
 
 **License**
 
--  This repository does not include a license file. Add one if you plan to publish the project.d
+-  This repository does not include a license file. Add one if you plan to publish the project.
